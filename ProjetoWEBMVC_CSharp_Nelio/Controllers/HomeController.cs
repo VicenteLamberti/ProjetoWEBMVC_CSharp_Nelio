@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ProjetoWEBMVC_CSharp_Nelio.Models;
+using ProjetoWEBMVC_CSharp_Nelio.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

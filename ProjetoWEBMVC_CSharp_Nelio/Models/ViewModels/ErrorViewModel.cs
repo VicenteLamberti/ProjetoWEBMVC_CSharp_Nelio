@@ -1,6 +1,6 @@
 using System;
 
-namespace ProjetoWEBMVC_CSharp_Nelio.Models
+namespace ProjetoWEBMVC_CSharp_Nelio.Models.ViewModels
 {
     public class ErrorViewModel
     {
