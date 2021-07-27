@@ -11,6 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ProjetoWEBMVC_CSharp_Nelio.Data;
+using ProjetoWEBMVC_CSharp_Nelio.Services;
 
 namespace ProjetoWEBMVC_CSharp_Nelio
 {
@@ -40,6 +41,7 @@ namespace ProjetoWEBMVC_CSharp_Nelio
                     options.UseSqlite(Configuration.GetConnectionString("ProjetoWEBMVC_CSharp_NelioContext")));
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<SellerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
