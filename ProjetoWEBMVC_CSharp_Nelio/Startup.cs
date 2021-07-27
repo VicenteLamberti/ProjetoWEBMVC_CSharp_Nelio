@@ -9,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using ProjetoWEBMVC_CSharp_Nelio.Data;
 
 namespace ProjetoWEBMVC_CSharp_Nelio
 {
@@ -33,6 +35,9 @@ namespace ProjetoWEBMVC_CSharp_Nelio
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<ProjetoWEBMVC_CSharp_NelioContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("ProjetoWEBMVC_CSharp_NelioContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

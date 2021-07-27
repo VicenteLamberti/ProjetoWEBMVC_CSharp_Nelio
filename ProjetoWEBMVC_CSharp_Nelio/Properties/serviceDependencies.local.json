@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql.local",
+      "connectionId": "ProjetoWEBMVC_CSharp_NelioContext"
+    }
+  }
+}
