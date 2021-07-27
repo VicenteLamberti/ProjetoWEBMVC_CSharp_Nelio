@@ -15,5 +15,7 @@ namespace ProjetoWEBMVC_CSharp_Nelio.Data
         }
 
         public DbSet<ProjetoWEBMVC_CSharp_Nelio.Models.Departament> Departament { get; set; }
+        public DbSet<Seller> Seller { get; set; }
+        public DbSet<SalesRecords> SalesRecord { get; set; }
     }
 }

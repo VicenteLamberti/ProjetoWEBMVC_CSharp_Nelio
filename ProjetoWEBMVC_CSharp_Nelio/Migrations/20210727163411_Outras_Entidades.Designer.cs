@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjetoWEBMVC_CSharp_Nelio.Data;
 
 namespace ProjetoWEBMVC_CSharp_Nelio.Migrations
 {
     [DbContext(typeof(ProjetoWEBMVC_CSharp_NelioContext))]
-    partial class ProjetoWEBMVC_CSharp_NelioContextModelSnapshot : ModelSnapshot
+    [Migration("20210727163411_Outras_Entidades")]
+    partial class Outras_Entidades
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
