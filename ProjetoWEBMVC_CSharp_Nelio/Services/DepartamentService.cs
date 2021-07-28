@@ -7,25 +7,20 @@ using System.Threading.Tasks;
 
 namespace ProjetoWEBMVC_CSharp_Nelio.Services
 {
-    public class SellerService
+    public class DepartamentService
     {
         private readonly ProjetoWEBMVC_CSharp_NelioContext _context;
 
-        public SellerService(ProjetoWEBMVC_CSharp_NelioContext context)
+        public DepartamentService(ProjetoWEBMVC_CSharp_NelioContext context)
         {
             _context = context;
         }
 
-        public List<Seller> FindAll()
+        public List<Departament> FindAll()
         {
-            return _context.Seller.ToList();
+            return _context.Departament.OrderBy(x => x.Name).ToList();
         }
 
-        public void Insert(Seller obj)
-        {
-            _context.Add(obj);
-            _context.SaveChanges();
-        }
-
+        
     }
 }

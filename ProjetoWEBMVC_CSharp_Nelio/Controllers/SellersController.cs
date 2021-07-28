@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProjetoWEBMVC_CSharp_Nelio.Models;
+using ProjetoWEBMVC_CSharp_Nelio.Models.ViewModels;
 using ProjetoWEBMVC_CSharp_Nelio.Services;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,11 @@ namespace ProjetoWEBMVC_CSharp_Nelio.Controllers
     public class SellersController : Controller
     {
         private readonly SellerService _sellerService;
-        public SellersController(SellerService sellerService)
+        private readonly DepartamentService _departamentService;
+        public SellersController(SellerService sellerService,DepartamentService departamentService)
         {
             _sellerService = sellerService;
+            _departamentService = departamentService;
         }
         public IActionResult Index()
         {
@@ -23,7 +26,9 @@ namespace ProjetoWEBMVC_CSharp_Nelio.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            var departaments = _departamentService.FindAll();
+            var viewModel = new SellerFormViewModel { Departaments = departaments };
+            return View(viewModel);
         }
 
         [HttpPost]
