@@ -12,6 +12,7 @@ namespace ProjetoWEBMVC_CSharp_Nelio.Models
         public DateTime BirthDate { get; set; }
         public double BaseSalary { get; set; }
         public Departament Departament { get; set; }
+        public int DepartamentId { get; set; }
         public ICollection<SalesRecords> Sales { get; set; } = new List<SalesRecords>();
 
         public Seller()
