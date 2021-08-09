@@ -35,9 +35,20 @@ namespace ProjetoWEBMVC_CSharp_Nelio.Controllers
             var result = await _salesRecordsService.FindByDateAsync(minDate, maxDate);
             return View(result);
         }
-        public IActionResult GroupingSearch()
+        public async Task<IActionResult> GroupingSearch(DateTime? minDate, DateTime? maxDate)
         {
-            return View();
+            if (minDate.HasValue != true)
+            {
+                minDate = new DateTime(2018, 1, 1);
+            }
+            if (maxDate.HasValue != true)
+            {
+                maxDate = DateTime.Now;
+            }
+            ViewData["minDate"] = minDate.Value.ToString("yyyy-MM-dd");
+            ViewData["maxDate"] = maxDate.Value.ToString("yyyy-MM-dd");
+            var result = await _salesRecordsService.FindByDateGroupingAsync(minDate, maxDate);
+            return View(result);
         }
     }
 }
